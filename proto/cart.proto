@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package cart;
+
+service CartService {
+  rpc Create (CartRequest) returns (CartResponse) {}
+
+}
+
+
+message CartRequest {
+  string cart_id = 1;
+  string user_id = 2;
+}
+
+message CartResponse {
+  int32 status = 1;
+  repeated string error = 2;
+}
+
